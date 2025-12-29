@@ -3,7 +3,7 @@ const http = require("http");
 const { Server } = require("socket.io");
 const cors = require("cors");
 const { joinRoom, disconnect } = require("./socket/roomManager");
-const { submitCode } = require("./socket/gameManager"); // Import it here
+const { submitCode } = require("./socket/gameManager");
 
 const app = express();
 app.use(cors());
@@ -20,9 +20,7 @@ io.on("connection", (socket) => {
     joinRoom(io, socket, data);
   });
 
-  // Use the imported function
   socket.on("submit_code", (data) => {
-    console.log("submit event!");
     submitCode(io, socket, data);
   });
 

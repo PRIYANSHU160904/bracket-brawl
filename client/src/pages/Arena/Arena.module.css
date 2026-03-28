@@ -1,0 +1,372 @@
+.gameResultContainer {
+  height: 100vh;
+  width: 100vw;
+  background-color: #0f0f0f;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ratingChangeContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+.ratingNumber {
+  font-size: 24px;
+  font-weight: bold;
+  color: #e0e0e0;
+}
+
+.ratingDiffPositive {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2ed573;
+}
+
+.ratingDiffNegative {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff4757;
+}
+
+.findMatchBtn {
+  padding: 12px 30px;
+  font-size: 18px;
+  background-color: #2ed573;
+  color: #0f0f0f;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.resultActions {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.goHomeBtn {
+  padding: 12px 30px;
+  font-size: 18px;
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+
+.goHomeBtn:hover {
+  background-color: #3a3a3a;
+  color: #ffffff;
+}
+
+.findMatchBtn:hover {
+  background-color: #26b963;
+}
+
+.arenaContainer {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background-color: #0f0f0f;
+  color: white;
+  overflow: hidden;
+}
+
+.header {
+  padding: 15px 30px;
+  background-color: #1e1e1e;
+  border-bottom: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2ed573;
+}
+
+.username {
+  color: #cccccc;
+  font-size: 16px;
+  font-weight: 500;
+  padding-left: 10px;
+  border-left: 2px solid #333;
+}
+
+.opponentStatusContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #2d2d2d;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid #444;
+}
+
+.opponentLabel {
+  color: #aaaaaa;
+  font-size: 14px;
+}
+
+.opponentName {
+  color: #e0e0e0;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #f39c12;
+}
+
+.statusText {
+  color: #cccccc;
+  font-size: 14px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+}
+
+.languageSelect {
+  margin-right: 15px;
+  padding: 8px 12px;
+  background-color: #2d2d2d;
+  color: white;
+  border: 1px solid #444;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+}
+
+.languageSelect:focus {
+  border-color: #2ed573;
+}
+
+.submitBtn {
+  background-color: #2ed573;
+  color: #0f0f0f;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background-color: #26b963;
+}
+
+.submitBtn:disabled {
+  background-color: #26b963;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.mainSplit {
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.mainSplit > .problemPane,
+.mainSplit > .editorTerminalSplit {
+  height: 100%;
+}
+
+:global(.gutter) {
+  background-color: #1e1e1e;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transition: background-color 0.2s ease;
+  position: relative;
+}
+
+:global(.gutter::after) {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  background-color: #333;
+  transition: background-color 0.2s ease;
+}
+
+:global(.gutter.gutter-horizontal) {
+  cursor: col-resize;
+}
+
+:global(.gutter:hover::after),
+:global(.gutter:active::after) {
+  background-color: #555;
+}
+
+.problemPane::-webkit-scrollbar {
+  width: 8px;
+}
+
+.problemPane::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.problemPane::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 4px;
+}
+
+.problemPane::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.problemPane {
+  box-sizing: border-box;
+  padding: 30px;
+  padding-bottom: 60px;
+  overflow-y: auto;
+  background-color: #0f0f0f;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+.problemTitle {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #e0e0e0;
+}
+
+.problemDescription {
+  color: #cccccc;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.divider {
+  border-color: #333;
+  margin: 20px 0;
+}
+
+.examplesTitle {
+  font-size: 20px;
+  color: #e0e0e0;
+  margin-bottom: 15px;
+}
+
+.exampleContainer {
+  margin-bottom: 25px;
+}
+
+.exampleLabel {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #e0e0e0;
+}
+
+.exampleBox {
+  background-color: #252526;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  font-family: monospace;
+  font-size: 14px;
+  color: #d4d4d4;
+}
+
+.ioBlock {
+  margin-bottom: 12px;
+}
+
+.ioLabel {
+  color: #569cd6;
+}
+
+.ioContent {
+  white-space: pre-wrap;
+  margin-top: 4px;
+}
+
+.explanation {
+  margin-top: 10px;
+  color: #aaaaaa;
+  font-size: 14px;
+}
+
+.constraintsList {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.constraintItem {
+  margin-bottom: 8px;
+}
+
+.constraintItem code {
+  background-color: #252526;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 14px;
+  color: #d4d4d4;
+  border: 1px solid #333;
+}
+
+.editorTerminalSplit {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: #1e1e1e;
+}
+
+.editorPane {
+  flex: 2;
+  overflow: hidden;
+}
+
+.terminalPane {
+  flex: 1;
+  background-color: #0a0a0a;
+  border-top: 1px solid #333;
+  padding: 15px;
+  overflow-y: auto;
+  font-family: monospace;
+  position: relative;
+}
+
+.terminalHeader {
+  color: #888;
+  margin-bottom: 10px;
+  font-weight: bold;
+}

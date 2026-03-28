@@ -21,3 +21,8 @@ Thumbs.db
 
 # IDE/editor
 .vscode/
+
+.gitignore
+client/README.md
+server/data
+server/scripts
